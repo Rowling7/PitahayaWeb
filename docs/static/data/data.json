@@ -724,8 +724,13 @@
                 "bgImage": "static/ico/zypuu.png"
             },
             {
-                "name": "SitemapOnline",
+                "name": "ysindex",
                 "target": "https://rowling7.github.io/ysindex/",
+                "bgImage": "static/ico/github.png"
+            },
+            {
+                "name": "PitahayaWeb",
+                "target": "https://rowling7.github.io/PitahayaWeb/",
                 "bgImage": "static/ico/github.png"
             }
         ]
