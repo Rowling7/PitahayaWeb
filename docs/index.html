@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta name="viewport" charset="UTF-8" content=" viewport-fit=cover">
+  <link rel="icon" href="static/ico/favicon.ico" type="image/x-icon">
+  <title>YsongCao's Sitemap</title>
+  <link rel="stylesheet" href="static/css/styles.css" /> <!--全局样式-->
+  <link rel="stylesheet" href="static/css/BGeffects.css" id="bgeffects-css" /> <!--背景特效-->
+  <link rel="stylesheet" href="static/css/animationEffects.css" /> <!--动画效果-->
+  <script src="static/js/HeaderControler.js" defer></script> <!--头部栏部分控制-->
+  <script src="static/js/LoadSearchData.js" defer></script> <!--主要部分：数据载入-->
+  <script src="static/js/DAWS.js" defer></script> <!--引擎选择和快捷方式动态响应-->
+  <script src="static/js/BGeffects.js" id="bgeffects-js" defer></script> <!--背景特效-->
+  <script src="static/js/Settings.js" defer></script> <!--设置控制-->
+  <script src="static/js/OtherControler.js" defer></script> <!--其他控制-->
+  <!--<link rel="stylesheet" href="static/css/forTest.css" />-->
+  <!--<script src="static/js/LoadData.js" defer></script>-->
+  <!--<link rel="stylesheet" href="static/css/forTest.css" />-->
+  <!--<script src="static/js/LoadData.js" defer></script>-->
+  <!--<link rel="stylesheet" href="static/css/forTest.css" />-->
+  <!--<script src="static/js/LoadData.js" defer></script>-->
+
+</head>
+
+<body id="bodyId">
+  <div class="canvas-container">
+    <canvas id="particleCanvas"></canvas>
+  </div>
+  <!--抬头-->
+  <div class="header-container" id="headerContainer">
+    <div>
+      <a href="https://www.msn.cn/zh-cn/weather/forecast" target="_blank"><img id="image4Gif"
+          src="static/ico/favicon.ico" alt="gifORpng" /></a>
+    </div>
+    <h1 class="site-title">
+      <a class="siteFornt" id="siteTitle">Pitahaya Guide</a>
+    </h1><!--YsongCao's -->
+    <div class="cntr" id="cntrSearch" style="margin-right: 10px; margin-top: 4px;">
+      <div class="cntr-innr">
+        <label class="search" for="inpt_search">
+          <input id="inpt_search" type="text" style="padding-top: 6px;" />
+        </label>
+      </div>
+    </div>
+    <a class="changePage" id="changePage" href="Xindex.html" style="margin-right: 10px;">
+      <img class="changePageIco" src="static/ico/change.png" alt="搜索图标" />
+    </a>
+    <a class="changeBG" id="changeBG" href="changeBG.html" style="margin-right: 6px;">
+      <img class="changeBGIco" src="static/ico/changeBG.png" alt="切换背景图" />
+    </a>
+    <a class="light-mod" id="lightMod" style="margin-right: 6px;">
+      <img class="lightModIco" src="static/ico/lightMod.png" alt="简洁模式" />
+    </a>
+    <!-- 暗黑切换按钮 (已被设置按钮替代)-->
+    <!--<button class="theme-toggle" id="themeToggle" aria-pressed="false" hidden>暗黑</button>-->
+    <!-- 设置按钮 -->
+    <div class="settings-container">
+      <button class="settings-btn" id="settingsBtn">
+        <img class="steeingImg" src="static/ico/setting.png" alt="设置">
+      </button>
+      <div class="dropdown-menu" id="settingsDropdown">
+        <!-- 动态生成的下拉选项 -->
+      </div>
+    </div>
+  </div>
+
+  <!--搜索框-->
+  <div class="search-container" id="search-container">
+    <form action method="get" class="searchForm" id="searchForm">
+      <div class="custom-select">
+        <select class="engine" name="engine" id="engineSelect" title="engine">
+          <option value="https://www.bing.com/search?q=">Bing</option>
+          <option value="https://www.baidu.com/s?wd=">Baidu</option>
+          <option value="https://xiaoyi.huawei.com/?q=">小艺</option>
+          <option value="https://www.sogou.com/web?ie={inputEncoding}&query=">搜狗</option>
+          <option value="https://www.so.com/s?ie={inputEncoding}&q=">360</option>
+          <option value="http://www.zhihu.com/search?type=content&q=">知乎</option>
+          <option value="https://s.weibo.com/weibo?q=">微博</option>
+          <option value="https://www.xiaohongshu.com/search_result?keyword=">小红书</option>
+          <option value="https://www.douban.com/search?source=suggest&q=">豆瓣</option>
+          <option value="https://www.douyin.com/root/search/">抖音</option>
+          <option value="https://search.bilibili.com/video?keyword=">B站</option>
+        </select>
+        <div class="custom-select-trigger">
+          <div class="triggerName">Bing</div>
+        </div>
+        <div class="custom-options">
+          <div class="option" data-value="https://www.bing.com/search?q=">Bing</div>
+          <div class="option" data-value="https://www.baidu.com/s?wd=">Baidu</div>
+          <div class="option" data-value="https://xiaoyi.huawei.com/?q=">小艺</div>
+          <div class="option" data-value="https://www.sogou.com/web?ie={inputEncoding}&query=">搜狗</div>
+          <div class="option" data-value="https://www.so.com/s?ie={inputEncoding}&q=">360</div>
+          <div class="option" data-value="http://www.zhihu.com/search?type=content&q=">知乎</div>
+          <div class="option" data-value="https://s.weibo.com/weibo?q=">微博</div>
+          <div class="option" data-value="https://www.xiaohongshu.com/search_result?keyword=">小红书</div>
+          <div class="option" data-value="https://www.douban.com/search?source=suggest&q=">豆瓣</div>
+          <div class="option" data-value="https://www.douyin.com/root/search/">抖音</div>
+          <div class="option" data-value="https://search.bilibili.com/video?keyword=">BiliBili</div>
+        </div>
+      </div>
+      <!--<div><a>∨</a></div>-->
+      <input type="text" name="query" placeholder="Type Something To Search ......">
+    </form>
+  </div>
+
+  <!-- 在container内添加控制栏 （!已经隐藏但仍起作用!）-->
+  <div class="container">
+    <!-- 已经隐藏但仍起作用-->
+    <div class="controls" hidden>
+      <label>每行显示数量：</label>
+      <input type="number" id="columnCount" min="1" max="14" value="4" />
+    </div>
+    <!--快捷方式部分-->
+    <div id="content-container" class="grid-container"></div>
+  </div>
+
+  <!--底栏部分-->
+  <div class="bottom-container" id="bottomContainer">
+    <div class="tabs-container" id="tabsContainer"></div>
+  </div>
+</body>
+
+</html>
