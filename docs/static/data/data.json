@@ -559,6 +559,11 @@
                 "bgImage": "static/ico/cowtransfer.png"
             },
             {
+                "name": "versus对比",
+                "target": "https://versus.com/cn",
+                "bgImage": "static/ico/versus.png"
+            },
+            {
                 "name": "CPU天梯图",
                 "target": "https://topic.expreview.com/CPU/",
                 "bgImage": "static/ico/cpugpu.png"
